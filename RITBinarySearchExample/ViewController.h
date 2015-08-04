@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)ordinarySearchAction:(UIButton *)sender;
+- (IBAction)binarySearchAction:(UIButton *)sender;
 
 @end
 

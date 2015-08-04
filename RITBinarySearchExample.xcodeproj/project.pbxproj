@@ -14,6 +14,7 @@
 		A2B21E941B70E07B008AF19B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B21E931B70E07B008AF19B /* Images.xcassets */; };
 		A2B21E971B70E07B008AF19B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2B21E951B70E07B008AF19B /* LaunchScreen.xib */; };
 		A2B21EA31B70E07B008AF19B /* RITBinarySearchExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B21EA21B70E07B008AF19B /* RITBinarySearchExampleTests.m */; };
+		A2B21EAE1B7105E4008AF19B /* MroBinarySearch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B21EAD1B7105E4008AF19B /* MroBinarySearch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		A2B21E9C1B70E07B008AF19B /* RITBinarySearchExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RITBinarySearchExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B21EA11B70E07B008AF19B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2B21EA21B70E07B008AF19B /* RITBinarySearchExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RITBinarySearchExampleTests.m; sourceTree = "<group>"; };
+		A2B21EAC1B7105E4008AF19B /* MroBinarySearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MroBinarySearch.h; sourceTree = "<group>"; };
+		A2B21EAD1B7105E4008AF19B /* MroBinarySearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MroBinarySearch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		A2B21E851B70E07B008AF19B /* RITBinarySearchExample */ = {
 			isa = PBXGroup;
 			children = (
+				A2B21EAC1B7105E4008AF19B /* MroBinarySearch.h */,
+				A2B21EAD1B7105E4008AF19B /* MroBinarySearch.m */,
 				A2B21E8A1B70E07B008AF19B /* AppDelegate.h */,
 				A2B21E8B1B70E07B008AF19B /* AppDelegate.m */,
 				A2B21E8D1B70E07B008AF19B /* ViewController.h */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2B21E8F1B70E07B008AF19B /* ViewController.m in Sources */,
+				A2B21EAE1B7105E4008AF19B /* MroBinarySearch.m in Sources */,
 				A2B21E8C1B70E07B008AF19B /* AppDelegate.m in Sources */,
 				A2B21E891B70E07B008AF19B /* main.m in Sources */,
 			);
