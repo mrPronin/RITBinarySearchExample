@@ -72,6 +72,7 @@ static NSString* lastNames[] = {
                            @"display_string"    : [NSString stringWithFormat:@"%@ %@", kFirstName, kLastName]
                            };
     [_records addObject:data];
+    [_records addObject:data];
     NSString *attributeName = @"email";
     [_records sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [obj1[attributeName] compare:obj2[attributeName]];
@@ -111,23 +112,29 @@ static NSString* lastNames[] = {
 - (IBAction)binarySearchAction:(UIButton *)sender {
     NSLog(@"[%@ %@]", [self class], NSStringFromSelector(_cmd));
     NSDate *startDate = [NSDate date];
-    NSString *attributeName = @"email";
     NSDictionary *data = @{
-//                           @"email"             : kEmail,
-                           @"email"             : @"test",
-                           @"first_name"        : kFirstName,
-                           @"last_name"         : kLastName,
-                           @"display_string"    : [NSString stringWithFormat:@"%@ %@", kFirstName, kLastName]
+//                           @"email"             : kEmail
+                           @"email"             : @"test@gmail.com"
                            };
-    NSUInteger index = [_records indexOfObject:data inSortedRange:NSMakeRange(0, _records.count) options:NSBinarySearchingFirstEqual usingComparator:^NSComparisonResult(id obj1, id obj2) {
+    NSString *attributeName = @"email";
+    NSUInteger index = [_records indexOfObject:data
+                                 inSortedRange:NSMakeRange(0, _records.count)
+                                       options:NSBinarySearchingFirstEqual
+                               usingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [obj1[attributeName] compare:obj2[attributeName]];
     }];
+    NSUInteger indexToPast = [_records indexOfObject:data
+                                 inSortedRange:NSMakeRange(0, _records.count)
+                                       options: NSBinarySearchingInsertionIndex | NSBinarySearchingFirstEqual
+                               usingComparator:^NSComparisonResult(id obj1, id obj2) {
+                                   return [obj1[attributeName] compare:obj2[attributeName]];
+                               }];
     NSLog(@"Time spent: %f", [[NSDate date] timeIntervalSinceDate:startDate]);
     if (index != NSNotFound) {
         NSDictionary *record = [_records objectAtIndex:index];
-        NSLog(@"Found at index [%lu]: %@", (unsigned long)index, record);
+        NSLog(@"Found at index [%lu] and index to past [%lu]: %@", (unsigned long)index, (unsigned long)indexToPast, record);
     } else {
-        NSLog(@"Not found!");
+        NSLog(@"Not found! Index to past [%lu]", (unsigned long)indexToPast);
     }
 }
 
